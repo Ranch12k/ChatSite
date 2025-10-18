@@ -7,7 +7,7 @@ Route::view('/', 'welcome');
 
 Route::get('dashboard', function(){
     $users = User::where('id', '!=', auth()->user()->id)->get();
-    return view('dashboard', compact('users')); 
+    return view('index', compact('users')); 
 })
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
